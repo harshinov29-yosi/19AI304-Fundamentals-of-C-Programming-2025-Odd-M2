@@ -56,7 +56,65 @@
 ### Step 11:
   Stop
 # Program:
+#include <stdio.h>
+
+#define EPSILON 0.0001
+
+int main()
+{
+    float math, science, english;
+    float average;
+
+    // Input marks
+    printf("Enter marks in Math: ");
+    scanf("%f", &math);
+
+    printf("Enter marks in Science: ");
+    scanf("%f", &science);
+
+    printf("Enter marks in English: ");
+    scanf("%f", &english);
+
+    // Calculate average
+    average = (math + science + english) / 3.0;
+
+    // Display average
+    printf("\nAverage Marks = %.2f\n", average);
+
+    // Determine grade using nested if-else and safe comparison
+    if (average >= 90.0 - EPSILON)
+    {
+        printf("Grade: A\n");
+    }
+    else
+    {
+        if (average >= 75.0 - EPSILON)
+        {
+            printf("Grade: B\n");
+        }
+        else
+        {
+            if (average >= 50.0 - EPSILON)
+            {
+                printf("Grade: C\n");
+            }
+            else
+            {
+                printf("Grade: F\n");
+            }
+        }
+    }
+
+    return 0;
+}
+
 # Output:
+Enter marks in Math: 84
+Enter marks in Science: 81
+Enter marks in English: 95
+
+Average Marks = 86.67
+Grade: B
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -88,7 +146,36 @@ Thus, the program was implemented and executed successfully, and the required ou
   Stop
 
 # Program:
+#include <stdio.h>
+
+int main()
+{
+    int num = 15;
+    int i;
+
+    printf("Multiplication Table of %d\n\n", num);
+
+    for (i = 1; i <= 10; i++)
+    {
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+
+    return 0;
+}
+
 # Output:
+Multiplication Table of 15
+
+15 x 1 = 15
+15 x 2 = 30
+15 x 3 = 45
+15 x 4 = 60
+15 x 5 = 75
+15 x 6 = 90
+15 x 7 = 105
+15 x 8 = 120
+15 x 9 = 135
+15 x 10 = 150
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -131,7 +218,45 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 7:   
   Stop
 # Program:
+#include <stdio.h>
+
+int main()
+{
+    int num, i, isPrime = 1;
+
+    // Input number
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // 0 and 1 are not prime
+    if (num <= 1)
+    {
+        isPrime = 0;
+    }
+    else
+    {
+        for (i = 2; i * i <= num; i++)
+        {
+            if (num % i == 0)
+            {
+                isPrime = 0;
+                break;
+            }
+        }
+    }
+
+    // Output result
+    if (isPrime)
+        printf("%d is a Prime number.\n", num);
+    else
+        printf("%d is not a Prime number.\n", num);
+
+    return 0;
+}
+
 # Output:
+Enter a number: 87
+87 is not a Prime number.
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -157,8 +282,8 @@ Thus, the program was implemented and executed successfully, and the required ou
   Include the standard input-output library: #include<stdio.h>.
 ### Step 3: 
   Declare variables i, j, n, and k.
-### Step 4: 
-  Read the value of n from the user.
+### Step 4:
+  Take n value as user input.
 ### Step 5: 
   Set i = 1.
 ### Step 6:  
@@ -179,7 +304,51 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 8:   
   Stop
 # Program:
+#include <stdio.h>
+
+int main()
+{
+    int n, i, j;
+
+    printf("Enter value of n: ");
+    scanf("%d", &n);
+
+    /* First row: 1 to n */
+    for (j = 1; j <= n; j++)
+    {
+        printf("%d", j);
+    }
+    printf("\n");
+
+    /* Middle rows */
+    for (i = 2; i <= n - 1; i++)
+    {
+        printf("%d", i);
+
+        for (j = 1; j <= n - 2; j++)
+        {
+            printf(" ");
+        }
+
+        printf("%d\n", n - i + 1);
+    }
+
+    /* Last row: n to 1 */
+    for (j = n; j >= 1; j--)
+    {
+        printf("%d", j);
+    }
+
+    return 0;
+}
+
 # Output:
+Enter value of n: 5
+12345
+2   4
+3   3
+4   2
+54321
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
