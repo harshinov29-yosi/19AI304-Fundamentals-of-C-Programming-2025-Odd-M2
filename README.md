@@ -60,18 +60,10 @@
 
 int main() {
     float math, science, english, average;
-
-    // Input marks
     printf("Enter marks for Math, Science, and English: ");
     scanf("%f %f %f", &math, &science, &english);
-
-    // Calculate average
     average = (math + science + english) / 3.0;
-
-    // Display average up to two decimal places
     printf("Average marks: %.2f\n", average);
-
-    // Determine grade using nested if-else
     if (average >= 90.0f) {
         printf("Grade: A\n");
     } else if (average >= 75.0f && average < 90.0f) {
@@ -86,9 +78,8 @@ int main() {
 }
 
 # Output:
-Enter marks for Math, Science, and English: 89 76 95
-Average marks: 86.67
-Grade: B
+<img width="612" height="251" alt="image" src="https://github.com/user-attachments/assets/6207d568-c35c-4598-adfa-2c4a20a5342a" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -125,28 +116,16 @@ Thus, the program was implemented and executed successfully, and the required ou
 int main() {
     int num = 15;
     int i;
-
     printf("Multiplication table of %d:\n", num);
-
     for (i = 1; i <= 10; i++) {
         printf("%d x %d = %d\n", num, i, num * i);
     }
-
     return 0;
 }
 
 # Output:
-Multiplication table of 15:
-15 x 1 = 15
-15 x 2 = 30
-15 x 3 = 45
-15 x 4 = 60
-15 x 5 = 75
-15 x 6 = 90
-15 x 7 = 105
-15 x 8 = 120
-15 x 9 = 135
-15 x 10 = 150
+<img width="417" height="472" alt="image" src="https://github.com/user-attachments/assets/aec55145-5b2a-4b51-a232-03c0c8410be7" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -195,14 +174,11 @@ Thus, the program was implemented and executed successfully, and the required ou
 int main() {
     int num, i;
     bool isPrime = true;
-
     printf("Enter a number: ");
     scanf("%d", &num);
-
     if (num <= 1) {
-        isPrime = false; // Numbers <= 1 are not prime
+        isPrime = false; 
     } else {
-        // Check for factors from 2 to sqrt(num)
         for (i = 2; i * i <= num; i++) {
             if (num % i == 0) {
                 isPrime = false;
@@ -220,8 +196,8 @@ int main() {
 }
 
 # Output:
-Enter a number: 79
-79 is a prime number.
+<img width="446" height="221" alt="image" src="https://github.com/user-attachments/assets/06db97f5-1f9f-4434-a3de-c4bab83b30e5" />
+
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -270,47 +246,32 @@ Thus, the program was implemented and executed successfully, and the required ou
   Stop
 # Program:
 #include <stdio.h>
-
-int main() {
-    int n, i, j;
-
-    printf("Enter the value of n: ");
-    scanf("%d", &n);
-
-    // First row
-    for (i = 1; i <= n; i++) {
-        printf("%d", i);
-    }
-    printf("\n");
-
-    // Middle rows
-    for (i = 2; i < n; i++) {
-        printf("%d", i); // First number
-
-        // Print spaces
-        for (j = 1; j <= n - 2; j++) {
+int main()
+{
+    int N,row,col;
+    scanf("%d",&N);
+    for(row=1;row<=N;row++){
+        for(col=1;col<=N;col++){
+            if(row==1)
+            printf("%d",col);
+            else if(col==1)
+            printf("%d",row);
+            else if(row==N)
+            printf("%d",N-col+1);
+            else if(col==N)
+            printf("%d",N-row+1);
+            else
             printf(" ");
         }
-
-        printf("%d\n", n - i + 1); // Last number
+        printf("\n");
     }
-
-    // Last row
-    for (i = n; i >= 1; i--) {
-        printf("%d", i);
-    }
-    printf("\n");
-
     return 0;
+    
 }
 
 # Output:
-Enter the value of n: 5
-12345
-2   4
-3   3
-4   2
-54321
+<img width="546" height="277" alt="image" src="https://github.com/user-attachments/assets/30701390-2a68-40e2-890d-d000a582f4f5" />
+
 # Result: 
   Thus, the program was implemented and executed successfully, and the required output was obtained.
 
@@ -368,24 +329,14 @@ Program :
 
 int main() {
     int i, j;
-    int n = 7; // Maximum number
-
-    // First row
+    int n = 7; 
     printf("0\n");
-
-    // Remaining rows
     for (i = 1; i <= n; i++) {
         int start = n - i + 1;
-
-        // Left ascending numbers
         for (j = start; j <= n; j++) {
             printf("%d ", j);
         }
-
-        // Middle 0
         printf("0 ");
-
-        // Right descending numbers
         for (j = n; j >= start; j--) {
             printf("%d ", j);
         }
@@ -397,14 +348,8 @@ int main() {
 }
 
 Output :
-0
-7 0 7 
-6 7 0 7 6 
-5 6 7 0 7 6 5 
-4 5 6 7 0 7 6 5 4 
-3 4 5 6 7 0 7 6 5 4 3 
-2 3 4 5 6 7 0 7 6 5 4 3 2 
-1 2 3 4 5 6 7 0 7 6 5 4 3 2 1 
+<img width="416" height="380" alt="image" src="https://github.com/user-attachments/assets/f119e803-cb13-4760-84e0-1382f8dd2686" />
+
 
 # Result:
   Thus, the program was implemented and executed successfully, and the required output was obtained.
